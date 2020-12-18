@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ParkingBazaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Evidencija">
+    <Key>
+      <PropertyRef Name="ID_Evidencije" />
+    </Key>
+    <Property Name="ID_Evidencije" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Registracioni_Broj" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Vreme_Ulaska" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="Vreme_Izlaska" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="Racun" Type="Decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="Izlaz">
+    <Key>
+      <PropertyRef Name="ID_Izlaz" />
+    </Key>
+    <Property Name="ID_Izlaz" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Registracioni_Broj" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Vreme_Izlaska" Type="Time" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="Korisnik">
+    <Key>
+      <PropertyRef Name="ID_Korisnika" />
+    </Key>
+    <Property Name="ID_Korisnika" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Korisnicko_Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ime_Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Pozicija" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sifra" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ulaz">
+    <Key>
+      <PropertyRef Name="ID_Ulaz" />
+    </Key>
+    <Property Name="ID_Ulaz" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegistracioniBroj" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Vreme_Ulaska" Type="Time" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="ParkingBazaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Evidencijas" EntityType="Self.Evidencija" />
+    <EntitySet Name="Izlazs" EntityType="Self.Izlaz" />
+    <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
+    <EntitySet Name="Ulazs" EntityType="Self.Ulaz" />
+  </EntityContainer>
+</Schema>

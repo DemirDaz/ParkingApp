@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ParkingBazaModelStoreContainer" CdmEntityContainer="ParkingBazaEntities">
+    <EntitySetMapping Name="Evidencijas">
+      <EntityTypeMapping TypeName="ParkingBazaModel.Evidencija">
+        <MappingFragment StoreEntitySet="Evidencija">
+          <ScalarProperty Name="ID_Evidencije" ColumnName="ID_Evidencije" />
+          <ScalarProperty Name="Registracioni_Broj" ColumnName="Registracioni_Broj" />
+          <ScalarProperty Name="Vreme_Ulaska" ColumnName="Vreme_Ulaska" />
+          <ScalarProperty Name="Vreme_Izlaska" ColumnName="Vreme_Izlaska" />
+          <ScalarProperty Name="Racun" ColumnName="Racun" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Izlazs">
+      <EntityTypeMapping TypeName="ParkingBazaModel.Izlaz">
+        <MappingFragment StoreEntitySet="Izlaz">
+          <ScalarProperty Name="ID_Izlaz" ColumnName="ID_Izlaz" />
+          <ScalarProperty Name="Registracioni_Broj" ColumnName="Registracioni_Broj" />
+          <ScalarProperty Name="Vreme_Izlaska" ColumnName="Vreme_Izlaska" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Korisniks">
+      <EntityTypeMapping TypeName="ParkingBazaModel.Korisnik">
+        <MappingFragment StoreEntitySet="Korisnik">
+          <ScalarProperty Name="ID_Korisnika" ColumnName="ID_Korisnika" />
+          <ScalarProperty Name="Korisnicko_Ime" ColumnName="Korisnicko_Ime" />
+          <ScalarProperty Name="Ime_Prezime" ColumnName="Ime Prezime" />
+          <ScalarProperty Name="Pozicija" ColumnName="Pozicija" />
+          <ScalarProperty Name="Sifra" ColumnName="Sifra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ulazs">
+      <EntityTypeMapping TypeName="ParkingBazaModel.Ulaz">
+        <MappingFragment StoreEntitySet="Ulaz">
+          <ScalarProperty Name="ID_Ulaz" ColumnName="ID_Ulaz" />
+          <ScalarProperty Name="RegistracioniBroj" ColumnName="RegistracioniBroj" />
+          <ScalarProperty Name="Vreme_Ulaska" ColumnName="Vreme_Ulaska" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

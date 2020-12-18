@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ParkingBazaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Evidencija">
+          <Key>
+            <PropertyRef Name="ID_Evidencije" />
+          </Key>
+          <Property Name="ID_Evidencije" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Registracioni_Broj" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Vreme_Ulaska" Type="time" Precision="0" Nullable="false" />
+          <Property Name="Vreme_Izlaska" Type="time" Precision="0" Nullable="false" />
+          <Property Name="Racun" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+          <Property Name="Datum" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Izlaz">
+          <Key>
+            <PropertyRef Name="ID_Izlaz" />
+          </Key>
+          <Property Name="ID_Izlaz" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Registracioni_Broj" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Vreme_Izlaska" Type="time" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Korisnik">
+          <Key>
+            <PropertyRef Name="ID_Korisnika" />
+          </Key>
+          <Property Name="ID_Korisnika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Korisnicko_Ime" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ime Prezime" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pozicija" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sifra" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ulaz">
+          <Key>
+            <PropertyRef Name="ID_Ulaz" />
+          </Key>
+          <Property Name="ID_Ulaz" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegistracioniBroj" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Vreme_Ulaska" Type="time" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ParkingBazaModelStoreContainer">
+          <EntitySet Name="Evidencija" EntityType="Self.Evidencija" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Izlaz" EntityType="Self.Izlaz" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ulaz" EntityType="Self.Ulaz" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ParkingBazaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Evidencija">
+          <Key>
+            <PropertyRef Name="ID_Evidencije" />
+          </Key>
+          <Property Name="ID_Evidencije" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Registracioni_Broj" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Vreme_Ulaska" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="Vreme_Izlaska" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="Racun" Type="Decimal" Precision="10" Scale="3" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="Izlaz">
+          <Key>
+            <PropertyRef Name="ID_Izlaz" />
+          </Key>
+          <Property Name="ID_Izlaz" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Registracioni_Broj" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Vreme_Izlaska" Type="Time" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="Korisnik">
+          <Key>
+            <PropertyRef Name="ID_Korisnika" />
+          </Key>
+          <Property Name="ID_Korisnika" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Korisnicko_Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ime_Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Pozicija" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sifra" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ulaz">
+          <Key>
+            <PropertyRef Name="ID_Ulaz" />
+          </Key>
+          <Property Name="ID_Ulaz" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegistracioniBroj" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Vreme_Ulaska" Type="Time" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="ParkingBazaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Evidencijas" EntityType="Self.Evidencija" />
+          <EntitySet Name="Izlazs" EntityType="Self.Izlaz" />
+          <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
+          <EntitySet Name="Ulazs" EntityType="Self.Ulaz" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ParkingBazaModelStoreContainer" CdmEntityContainer="ParkingBazaEntities">
+          <EntitySetMapping Name="Evidencijas">
+            <EntityTypeMapping TypeName="ParkingBazaModel.Evidencija">
+              <MappingFragment StoreEntitySet="Evidencija">
+                <ScalarProperty Name="ID_Evidencije" ColumnName="ID_Evidencije" />
+                <ScalarProperty Name="Registracioni_Broj" ColumnName="Registracioni_Broj" />
+                <ScalarProperty Name="Vreme_Ulaska" ColumnName="Vreme_Ulaska" />
+                <ScalarProperty Name="Vreme_Izlaska" ColumnName="Vreme_Izlaska" />
+                <ScalarProperty Name="Racun" ColumnName="Racun" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Izlazs">
+            <EntityTypeMapping TypeName="ParkingBazaModel.Izlaz">
+              <MappingFragment StoreEntitySet="Izlaz">
+                <ScalarProperty Name="ID_Izlaz" ColumnName="ID_Izlaz" />
+                <ScalarProperty Name="Registracioni_Broj" ColumnName="Registracioni_Broj" />
+                <ScalarProperty Name="Vreme_Izlaska" ColumnName="Vreme_Izlaska" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Korisniks">
+            <EntityTypeMapping TypeName="ParkingBazaModel.Korisnik">
+              <MappingFragment StoreEntitySet="Korisnik">
+                <ScalarProperty Name="ID_Korisnika" ColumnName="ID_Korisnika" />
+                <ScalarProperty Name="Korisnicko_Ime" ColumnName="Korisnicko_Ime" />
+                <ScalarProperty Name="Ime_Prezime" ColumnName="Ime Prezime" />
+                <ScalarProperty Name="Pozicija" ColumnName="Pozicija" />
+                <ScalarProperty Name="Sifra" ColumnName="Sifra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ulazs">
+            <EntityTypeMapping TypeName="ParkingBazaModel.Ulaz">
+              <MappingFragment StoreEntitySet="Ulaz">
+                <ScalarProperty Name="ID_Ulaz" ColumnName="ID_Ulaz" />
+                <ScalarProperty Name="RegistracioniBroj" ColumnName="RegistracioniBroj" />
+                <ScalarProperty Name="Vreme_Ulaska" ColumnName="Vreme_Ulaska" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

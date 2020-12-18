@@ -1,0 +1,8 @@
+Pokrenuti solution u VS. Napraviti svoju Microsoft SQL bazu iz sql skripta, i spojiti u VS.
+
+Dva rezima : administrator i radnik.
+Kao administrator se loguje sa username:admin , pass:admin
+Kao radnik se loguje sa username:radnik , pass:radnik
+
+Administrator ima mogucnost pregleda svih racuna.
+Radnik ima mogucnost, zauzimanja mesta na parkingu, oslobadjanja i stampanja racuna.
